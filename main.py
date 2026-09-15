@@ -4,7 +4,6 @@ from produto import Produto
 db = EstoqueDB("estoque.db")
 
 
-# ---------------- Funções auxiliares de entrada ----------------
 
 def ler_inteiro(mensagem, minimo=None):
     while True:
@@ -40,7 +39,6 @@ def ler_texto_nao_vazio(mensagem):
 
 
 def selecionar_produto():
-    """Pede um nome, busca no banco e deixa o usuário escolher entre os resultados."""
     nome_busca = ler_texto_nao_vazio("Digite o nome (ou parte do nome) do produto: ")
     encontrados = db.buscar_produtos_por_nome(nome_busca)
 
@@ -58,7 +56,6 @@ def selecionar_produto():
     return next((p for p in encontrados if p.id == id_escolhido), None)
 
 
-# ---------------- Funcionalidades do menu ----------------
 
 def cadastrar_produto():
     print("------- CADASTRAR PRODUTO -------")
@@ -140,7 +137,6 @@ def alertar_estoque_baixo():
         print(produto)
 
 
-# ---------------- Menu principal ----------------
 
 def menu_de_opcoes():
     print("=" * 60)
