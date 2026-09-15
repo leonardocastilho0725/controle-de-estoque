@@ -5,15 +5,12 @@ from produto import Produto
 
 
 class EstoqueDB:
-    """Concentra todo o acesso ao banco de dados SQLite.
+    
 
-    O resto do programa nunca escreve SQL diretamente: ele chama métodos
-    desta classe, que devolvem ou recebem objetos Produto.
-    """
 
     def __init__(self, caminho="estoque.db"):
         self.conexao = sqlite3.connect(caminho)
-        self.conexao.row_factory = sqlite3.Row  # permite acessar colunas pelo nome
+        self.conexao.row_factory = sqlite3.Row 
         self._criar_tabelas()
 
     def _criar_tabelas(self):
@@ -43,7 +40,7 @@ class EstoqueDB:
         )
         self.conexao.commit()
 
-    # ---------- CREATE ----------
+    
     def inserir_produto(self, produto):
         cursor = self.conexao.cursor()
         cursor.execute(
