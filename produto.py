@@ -1,10 +1,5 @@
 class Produto:
-    """Representa um produto do estoque.
-
-    Os atributos guardam os dados do produto. Os métodos concentram as
-    regras de negócio (entrada, saída e verificação de estoque baixo),
-    em vez de deixar o resto do programa alterar 'quantidade' diretamente.
-    """
+   
 
     def __init__(self, nome, preco, quantidade, estoque_minimo, id=None):
         self.id = id
